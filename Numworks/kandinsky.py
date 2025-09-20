@@ -29,3 +29,4 @@ def fill_rect(x,y,w,h,col):
         for _y in range(y,y+h):
             img.putpixel((_x,_y),color(*col))
     save_image(img)
+
