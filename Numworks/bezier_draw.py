@@ -39,11 +39,7 @@ pos = [
       ]
 
 Δθ = 0.05
-<<<<<<< HEAD
 tθ = int(1/Δθ)
-=======
-tθ = 1/Δθ
->>>>>>> c3abc6662b766d2aa0cfe7e0f89cd9154bf10313
 for pnum,(x,y) in enumerate(pos):
   c = int(255*pnum/len(pos))
   for θ in range(tθ):
@@ -86,6 +82,7 @@ while t<=1:
   t += r/l
   index += 1
 print(index)
+
 
 
 save_gif()
