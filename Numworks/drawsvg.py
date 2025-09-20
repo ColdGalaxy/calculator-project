@@ -42,7 +42,11 @@ def draw(xoff,yoff,scale,xB,yB,xdB,ydB):
 xoff,yoff,scale = 100,50,15
 
 Δt = 0.01
+<<<<<<< HEAD
 ts = int(1/Δt)
+=======
+ts = 1/Δt
+>>>>>>> c3abc6662b766d2aa0cfe7e0f89cd9154bf10313
 
 index = 0
 while index < len(character):
