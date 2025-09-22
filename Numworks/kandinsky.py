@@ -14,7 +14,7 @@ WIDTH, HEIGHT = 320, 222
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Game Window")
 
-DELAY = 0.001
+DELAY = 0.00#1
 screen.fill("#ffffff")
 
 def save_image(img):

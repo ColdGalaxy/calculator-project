@@ -6,7 +6,8 @@ This will be made for Numworks calculators, so memory is a big factor in this, a
 
 - [x] Compress a SVG (or rather composite Bezier curves) into memory-saving strings
 - [x] Render this string back into a bunch of curves
-- [ ] Add width compatibility and width scaling
+- - [ ] Make efficient rendering (TBC later)
+- [x] Add width compatibility and width scaling
 - [ ] Render one character after another
 - [ ] Add support for handles
 - [ ] More?

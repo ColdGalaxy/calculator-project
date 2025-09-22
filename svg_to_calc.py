@@ -1,5 +1,6 @@
 from xml.etree import ElementTree
 from fpcalc import encode, decode
+import unicodedata
 import re
 
 tree = ElementTree.parse('symbol1.svg')
@@ -69,5 +70,14 @@ for path in paths:
             raise Exception
         cond_path += pathchrs"""
 
+# BEWARE: In the terminal there is a bug where there is a space in the text
 print("\n",repr(cond_path), repr(cond_path.encode("utf-8")), len(cond_path))
+print(cond_path)
+und = []
+for i in range(0xffff):
+    if unicodedata.normalize("NFKD", chr(i)) != chr(i):
+        und.append(chr(i))
+for u in und:
+    cond_path = cond_path.replace(u,"\\u"+hex(ord(u))[2:].rjust(4,"0"))
+print(cond_path)
 

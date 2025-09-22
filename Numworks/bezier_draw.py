@@ -49,40 +49,17 @@ for pnum,(x,y) in enumerate(pos):
 X, Y = zip(*pos)
 xBez, yBez = Bezier(X), Bezier(Y)
 
-Δt = 0.005
-ts = 1/Δt
-
-"""
-for t in range(ts+1):
-  t *= Δt
-  #print(t)
-  draw(xBez.B(t),yBez.B(t),None,None)
-"""
-"""
-x,y = X[0],Y[0]
-print(x,y)
-set_pixel(x,y,(0,0,0))
-for t in range(ts+1):
-  t *= Δt
-  #print(t)
-  l = (xBez.dB(t)**2+yBez.dB(t)**2)**0.5
-  x += int(xBez.dB(t)/l*3)
-  y += int(yBez.dB(t)/l*3)
-  print(x,y)
-  set_pixel(x,y,(0,0,0))
-"""
-
+px,py = X[0],Y[0]
 r = 1
 t = 0
-index = 0
 while t<=1:
   #print(t)
   l = (xBez.dB(t)**2+yBez.dB(t)**2)**0.5
-  set_pixel(int(xBez.B(t)),int(yBez.B(t)),(0,0,0))
+  x,y = xBez.B(t),yBez.B(t)
+  c = 0+100*((x-px)**2+(x-px)**2)**0.5
+  print(c)
+  set_pixel(int(x),int(y),(c,c,c))
+  px,py = x,y
   t += r/l
-  index += 1
-print(index)
-
-
 
 save_gif()
